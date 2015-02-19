@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                margin: 0;
+            }
+
+            .button {
+                display: inline-block;
+                height: 30px;
+                background: red;
+                cursor: default;
+                font-size: 20px;
+            }
+                .button_hover {
+                    background: blue;
+                }
+        </style>
+        <script type="text/javascript">
+            window.onload = function() {
+                var button = document.getElementsByClassName('button');
+                var now;
+
+                var onMouseEnter = function(e) {
+                    now = new Date();
+                    this.className = 'button button_hover';
+                    console.log(e.type + ' - ' + (new Date() - now));
+                };
+
+                var onMouseLeave = function(e) {
+                    this.className = 'button';
+                    console.log(e.type + ' - ' + (new Date() - now));
+                };
+
+                button[0].addEventListener('mouseenter', onMouseEnter, false);
+                button[0].addEventListener('mouseleave', onMouseLeave, false);
+            }
+        </script>
+    </head>
+    <body>
+        <div class="button">Button 1</div>
+    </body>
+</html>

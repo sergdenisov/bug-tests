@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html, body {
+                margin: 0;
+                overflow-y: hidden;
+                height: 100%;
+            }
+
+            .content, .content * {
+                -webkit-transform: translate3d(0, 0, 0);
+            }
+
+            .content {
+                -webkit-overflow-scrolling: touch;
+                height: 100%;
+                overflow-y: auto;
+            }
+
+            .fixed {
+                position: fixed;
+                background: red;
+                width: 100%;
+                padding: 20px;
+                z-index: 1;
+            }
+
+            .content-example {
+                height: 2000px;
+                background: yellow;
+            }
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    </head>
+    <body>
+        <div class="fixed">Fixed</div>
+        <div class="content">
+            <div class="content-example"></div>
+        </div>
+    </body>
+</html>
